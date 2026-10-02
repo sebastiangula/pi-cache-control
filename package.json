@@ -1,0 +1,35 @@
+{
+  "name": "pi-cache-control",
+  "version": "0.1.0",
+  "description": "pi extension that tracks prompt-cache usage (hits, writes, misses and why) for models served through LiteLLM and other OpenAI-compatible proxies",
+  "type": "module",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "litellm",
+    "prompt-caching"
+  ],
+  "files": [
+    "extensions",
+    "src",
+    "README.md"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions/cache-control.ts"
+    ]
+  },
+  "scripts": {
+    "test": "node --test --experimental-strip-types --no-warnings test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm test"
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "*"
+  },
+  "devDependencies": {
+    "@mariozechner/pi-coding-agent": "^0.73.1",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0"
+  }
+}
